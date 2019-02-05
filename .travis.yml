@@ -1,23 +1,37 @@
-language: node_js
-node_js:
-  - '9'
-  - '8'
-  - node
+# safelist - only build on pushes to these branches
+branches:
+  only:
+  - master
+  - travis
+# we needed this if wanted to build Hugo manually
+# language: go
+# go:
+# - 1.10
 install:
-- yarn global add travis-ci-cloudfront-invalidation
-- yarn
+# change this version as it goes up
+# get and install Hugo
+- wget https://github.com/gohugoio/hugo/releases/download/v0.40/hugo_0.40_Linux-64bit.deb
+- sudo dpkg -i hugo*.deb
+# clone the parent repository, note this is different from Parsia-Clone
+- git clone https://github.com/ErikBlomquist/korkenxyz-blog.git
+- cd korkenxyz-blog
+# update and fetch submodules
+- git submodule init
+- git submodule update --recursive --remote
 script:
-- yarn test
-- yarn build
+# build the website with Hugo, output will be in public directory
+- hugo
+# deploy public directory to the bucket
 deploy:
   provider: s3
-  access_key_id: AKIAIKCKW5AZP6AIPMJQ
-  secret_access_key:
-    secure: UhPNkGMJ6BzbEgm/L8Hfbkgl7d7azMCnuJkcW3jEgysAgkFzsyA1tKwlmcrTOrLRzIfgn6pcnShLSw9kz69fmprSAClS/29Z+TiWqjUFMhwJzGX/MInF5TPhBN5NSfUf+Qe0mj/KIkQQhRpN1/pPQSGhCI62UtBlu1S7IuNif1cVjvjooC6W6x0ApxH+5DwN5uIIYI2zRn7/Z1CeddPU7Pfmr81KSgQ1ceCAwAuHTkGV4ydm6XA5l7tf/ZzFlvABuOBSBhRWKfEidUGSU9jyiK3nuiOBLPb6I/slGgFx2MRoL5Me0s2+6XZus0zjSOzlVdpOFh/Wyt3E7vJl53evhwn2flBITD1t09vNvImvm9GVH10qn5UxaQY6ETbJzW37sZcmjH0Nk3dtUymZtokqIeoQLt9YfYxdwMjZYjgFFVpuEDYdkQJj7+lU6iyWDFQ6BLeogBEKfhc2eNcF34uLVOAVoW/XyfcYjcu9fsmtK0k0mRBPG8TVFZvUGZ5OJU4K3bBwp7wuFIuTWKSy+1jOQjHN3vd9s39PZjoHD5Cd1a6fis8wnGXwhwAkv6pjx+/68LF6mKVRivURcVQmIqUsEi60lBkjYAlbPx+TGsNFnL3r3K1nZ/CAIBufIYu/qpkobW62D9Z6PUM7j9IXOFMc42dIsxDLGdUT33UL0shAL98=
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
   bucket: www.korken.xyz
+  region: us-east-1
+  local-dir: public
   skip_cleanup: true
   acl: public_read
   on:
-    repo: ErikBlomquist/korkenxyz-blog
-after_deploy:
-  - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_ID -s $AWS_SECRET_ID -c $CF_ID -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST
+    # make it work on branch other than master
+    # change this to master or any other branch if needed
+    branch: master
