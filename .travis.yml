@@ -1,0 +1,9 @@
+deploy:
+  provider: s3
+  access_key_id: AKIAIKCKW5AZP6AIPMJQ
+  secret_access_key:
+    secure: UhPNkGMJ6BzbEgm/L8Hfbkgl7d7azMCnuJkcW3jEgysAgkFzsyA1tKwlmcrTOrLRzIfgn6pcnShLSw9kz69fmprSAClS/29Z+TiWqjUFMhwJzGX/MInF5TPhBN5NSfUf+Qe0mj/KIkQQhRpN1/pPQSGhCI62UtBlu1S7IuNif1cVjvjooC6W6x0ApxH+5DwN5uIIYI2zRn7/Z1CeddPU7Pfmr81KSgQ1ceCAwAuHTkGV4ydm6XA5l7tf/ZzFlvABuOBSBhRWKfEidUGSU9jyiK3nuiOBLPb6I/slGgFx2MRoL5Me0s2+6XZus0zjSOzlVdpOFh/Wyt3E7vJl53evhwn2flBITD1t09vNvImvm9GVH10qn5UxaQY6ETbJzW37sZcmjH0Nk3dtUymZtokqIeoQLt9YfYxdwMjZYjgFFVpuEDYdkQJj7+lU6iyWDFQ6BLeogBEKfhc2eNcF34uLVOAVoW/XyfcYjcu9fsmtK0k0mRBPG8TVFZvUGZ5OJU4K3bBwp7wuFIuTWKSy+1jOQjHN3vd9s39PZjoHD5Cd1a6fis8wnGXwhwAkv6pjx+/68LF6mKVRivURcVQmIqUsEi60lBkjYAlbPx+TGsNFnL3r3K1nZ/CAIBufIYu/qpkobW62D9Z6PUM7j9IXOFMc42dIsxDLGdUT33UL0shAL98=
+  bucket: www.korken.xyz
+  acl: public_read
+  on:
+    repo: ErikBlomquist/korkenxyz-blog
