@@ -1,0 +1,23 @@
+baseURL = "https://www.korken.xyz/"
+languageCode = "en-us"
+title = "KORKEN"
+theme = "m10c"
+
+[params]
+  author = "John Doe"
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
+
+[[params.social]]
+  name = "github"
+  url = "https://github.com/ErikBlomquist"
+
+  [[params.social]]
+    name = "twitter"
+    url = "https://www.twitter.com/koerk6"
+
+  [params.style]
+  darkestColor = "#d35050"
+  darkColor = "#212121"
+  lightColor = "#f5e3e0"
+  lightestColor = "#f5f5f5"
+  primaryColor = "#fff"
