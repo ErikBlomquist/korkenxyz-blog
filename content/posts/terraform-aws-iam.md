@@ -33,7 +33,6 @@ This step assume that you:
 - Read about AWS IAM Best Practices (https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials)
 - Have AWS CLI installed. (https://docs.aws.amazon.com/signer/latest/developerguide/gs-cli.html)
 
-
 1. You need to link your IAM user to Terraform and you do that by open your aws cli and type `aws configure` and fill out the information. Replace **[YOUR ACCESS KEY]** and **[YOUR SECRET KEY]** for your IAM user.
 
           $ aws configure
