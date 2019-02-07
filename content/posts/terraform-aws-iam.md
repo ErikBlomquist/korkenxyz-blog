@@ -6,12 +6,12 @@ tags: ["Terraform", "AWS", "IAM"]
 ---
 
 ### Table of contents
-- [Install and Setup Terraform with AWS](#install-and-setup-terraform-with-aws)
-  - [Download and Install Terraform](#download-and-install-terraform)
-  - [Link AWS IAM](#link-aws-iam)
-  - [Build a VPC](#build-a-vpc)
-  - [Create subnets](#create-subnets)
-  - [Create an Internet Gateway](#create-an-internet-gateway)
+- Install and Setup Terraform with AWS
+  - Download and Install Terraform
+  - Link AWS IAM
+  - Build a VPC
+  - Create subnets
+  - Create an Internet Gateway
 
 ## Install and Setup Terraform with AWS
 ### Download and Install Terraform
