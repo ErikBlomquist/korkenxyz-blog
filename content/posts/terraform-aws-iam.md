@@ -2,8 +2,8 @@
 title: "Install and Setup Terraform with AWS"
 date: 2019-02-05T14:49:54-08:00
 draft: false
-tags: ["Terraform", "AWS", "IAM"]
-menu: "Blog"
+tags: ["terraform", "aws", "iam"]
+menu: "blog"
 ---
 
 ### Table of contents

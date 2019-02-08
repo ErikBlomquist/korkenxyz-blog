@@ -4,8 +4,8 @@ title = "KORKEN"
 theme = "m10c"
 
 [params]
-  author = "John Doe"
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
+  author = "Erik Blomquist"
+  description = "Hello, I'm Erik Blomquist and this is my blog about technology and automation."
 
 [[params.social]]
   name = "github"
