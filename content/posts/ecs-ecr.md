@@ -1,12 +1,12 @@
 ---
-title: "Intro to AWS ECS and ECR"
+title: "Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)"
 date: 2019-02-07T21:30:18-08:00
 draft: false
 tags: ["terraform", "ecs", "ecr"]
 ---
 
-## Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)
 ![Image of ECS](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDmRW5CPrryBo5tXGKkph0g51bFkO4qsmDYaXFDQmMEeLWvkVsA)
+
 ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.
 
 ### ECS Roles & Policies

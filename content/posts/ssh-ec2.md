@@ -1,11 +1,9 @@
 ---
-title: "Ssh Ec2"
+title: "How to SSH into EC2 (Mac & Linux users)"
 date: 2019-02-06T21:30:18-08:00
 draft: false
 tags: ["terraform", "aws", "ssh", "ec2"]
 ---
-
-## How to SSH into EC2 (Mac & Linux users)
 
 ### Setup and configure AWS Command Line Interface (CLI)
 1. Open your terminal and run "pip install awscli" and wait for it to install. You should

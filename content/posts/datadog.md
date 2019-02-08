@@ -1,13 +1,11 @@
 ---
-title: "Intro to DataDog"
+title: "How to create a dashboard with metrics using Datadog"
 date: 2019-02-07T21:30:18-08:00
 draft: false
 tags: ["terraform", "aws", "datadog"]
 ---
 
-## How to create a dashboard with metrics using Datadog
 The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.
-![Image of Datadog](https://datadog-prod.imgix.net/img/datadog_logo_share_tt.png)
 
 ### Install the Datadog Agent
 We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine.
