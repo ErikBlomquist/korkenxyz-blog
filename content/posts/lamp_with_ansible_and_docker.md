@@ -6,6 +6,7 @@ layout: 'posts'
 ---
 
 We are going to create a simple Ansible script that install a LAMP stack + Composer. LAMP stands for:
+
 - Linux
 - Apache
 - MySQL
