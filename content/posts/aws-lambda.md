@@ -6,8 +6,6 @@ layout: 'posts'
 tags: ["terraform", "aws", "lambda"]
 ---
 
-# Week 18
-
 ## Create your first AWS Lambda function with Terraform
 ![aws-lambda](http://www.digiclarity.com/images/technology/templates/lambda.jpg)
 
