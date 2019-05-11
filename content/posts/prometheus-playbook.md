@@ -1,11 +1,9 @@
 ---
-title: "Beats Erik Week 26"
+title: "How To Install Prometheus with Ansible on Amazon Linux."
 date: 2019-04-12T18:40:23-07:00
 draft: false
 tags: ["Erik Blomquist", "BEATS", "Week 26"]
 ---
-
-# How To Install Prometheus with Ansible on Amazon Linux.
 
 ## Prometheus
 We have previously downloaded, installed and configured Prometheus manually and it was a little tidious. We are going to create a playbook with Ansible that automates the process for us.

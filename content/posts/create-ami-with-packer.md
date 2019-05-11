@@ -1,12 +1,11 @@
 ---
-title: "Erik Blog Week 27."
+title: "How To Create A Customized AMI with Packer"
 date: 2019-04-19T11:52:38-07:00
 draft: false
 layout: 'posts'
 tags: ["Erik Blomquist", "BEATS", "Week 27"]
 ---
 
-# How To Create A Customized AMI with Packer
 - [Download Packer](#download-packer)
 - [Template](#template)
 - [Validate and Build](#validate-and-build)

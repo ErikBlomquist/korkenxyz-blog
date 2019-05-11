@@ -1,11 +1,10 @@
 ---
-title: "Erik's Blog Week 25"
+title: "How To Run Ansible Playbooks Remotely"
 date: 2019-04-05T10:11:03-07:00
 draft: false
 tags: ["Erik Blomquist", "BEATS", "Week 25"]
 ---
 
-## How To Run Ansible Playbooks Remotely
 Ansible is a great automation platform that allows you to control and configure multiple instances from your local machine without having to login to them. 
 
 - [Pre-req](#pre-req)

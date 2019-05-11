@@ -1,7 +1,10 @@
-# CIT-481-BOT
-New repo for final 481 project - ChatOps
-- Alex Enaceanu
-- Erik Blomquist
+---
+title: "Create a ChatOps Bot for Slack"
+date: 2019-02-08T12:22:30-08:00
+draft: false
+layout: 'posts'
+tags: ["terraform", "aws", "lambda"]
+---
 
 ## Tools/Technologies used
 ![Diagram Image](./images/Diagram.png)

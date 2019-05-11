@@ -1,12 +1,11 @@
 ---
-title: "Erik Blog Week 28."
+title: "Create Infrastructure for StackStorm"
 date: 2019-04-26T12:17:21-07:00
 draft: false
 layout: 'posts'
 tags: ["Erik Blomquist", "BEATS", "Week 28"]
 ---
 
-# Create Infrastructure for StackStorm
 We are going to create an infrastructure with Terraform that automatically installs StackStorm onto our instance. 
 
 - [Variables](#variables)
