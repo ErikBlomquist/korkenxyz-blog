@@ -24,9 +24,8 @@ script:
 # deploy public directory to the bucket
 deploy:
   provider: s3
-  access_key_id: AKIAYNG6XPWOYPCWWEF2
-  secret_access_key:
-    secure: BAJRAV5Lw5xreW7OySlSGpS06jGSUUzUOI71ZcIxAZM2tfsVmNlOeSiDtQMu9gEDO4L8K2rkybDYS6J0j+MHXpLhjqQINxHmFxsWDxOqcT3RIBaWdERM0uPhMdjV6SPgRmdfFIzICAz5TI4yl2uAMbSzbwE2fvI95ze2CJbRrzZp88cimMh2cOkdyDGyLFS+FJN2iTSEa9mB2do/2/KcN968O9qUcXxNIdbXlp3HoOja484cUZjlyFfzQ4U/n55C7nRB2+eY5VCqk4ho6XSE0rjvHH5wDVJDV2zvhhSnG87i1AsXMfHJaUYGmwQzM3leDV1UobMNYWpnazZkR7M2+nAQjbzw5lm0LnZBNWOHsgOZ4d5cf4FKRcc66XUQFN+9g4FZYvuCvhQ1P0vnATPvWk5VVXdot7LLRxWHMsFc6SjkYHz5RNeJ5eQ/ksXw9QmfzwCTo+458ayErutXWd9NlAiBg9PePjeU4Td4cW4n1V/VgA/1HNhgp1Wj5362Ak9LPXAbPLvPrOfScU4B3/Rd8ioP+RzbKKjF9rvaUBnHJhsdOZGYT30Ot/oHwuL0yOdngNdM+ETB8cHFHVR+aRV9nGbo36Lyl55R6Ni3AQSyrdWkmTsoL2UimaE4m5j4Tl0v31Zp+Z+OOIiJlH6VwZnhzoZiOiZwyzVVz8J+1TGXCZc=
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: www.korken.xyz
   region: us-east-1
   local-dir: public
