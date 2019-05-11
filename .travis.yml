@@ -33,6 +33,6 @@ deploy:
   skip_cleanup: true
   acl: public_read
   on:
-    # make it work on branch other than master
+    # make it work on branch other than master 
     # change this to master or any other branch if needed
     branch: master
