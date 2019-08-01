@@ -1,5 +1,5 @@
 ---
-title: "Create a Simple Discord Bot"
+title: "Create A Simple Discord Bot"
 date: 2019-08-01T15:38:40-07:00
 draft: false
 tags: ["discord", "bot"]
