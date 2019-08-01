@@ -1,3 +1,9 @@
+---
+title: "Setup Terraform"
+date: 2019-07-01T14:49:54-08:00
+draft: false
+tags: ["terraform", "aws"]
+---
 ## Setup Terraform 
 
 - [Windows 10](#windows-10)
