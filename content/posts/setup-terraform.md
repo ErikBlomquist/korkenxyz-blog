@@ -68,3 +68,5 @@ Open your command-line and type the following command to see which version you h
 $ terraform -version
 Terraform v0.12.6
 ```
+
+
