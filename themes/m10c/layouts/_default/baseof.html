@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo {{ .Hugo.Version }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ partials "google/analytics" . }}
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     <base href="{{ .Site.BaseURL }}" />
