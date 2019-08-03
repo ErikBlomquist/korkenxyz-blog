@@ -2,19 +2,18 @@
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">{{ .Title }}</h1>
-      {{ template "_internal/google_analytics.html" . }}
       <div class="post-meta">
         <div>
-          {{ partial "icon.html" "calendar" }}
+          {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
           {{ .PublishDate.Format "Jan 2, 2006" }}
         </div>
         <div>
-          {{ partial "icon.html" "clock" }}
+          {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
           {{ .ReadingTime }} min read
         </div>
         {{- with .Params.tags -}}
         <div>
-          {{ partial "icon.html" "tag" }}
+          {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
           {{ range . -}}
             {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
               <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
@@ -26,6 +25,9 @@
     </header>
     <div class="post-content">
       {{ .Content }}
+    </div>
+    <div class="post-footer">
+      {{ template "_internal/disqus.html" . }}
     </div>
   </article>
 {{ end }}

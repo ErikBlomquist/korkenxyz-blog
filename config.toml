@@ -1,14 +1,15 @@
 baseURL = "https://www.korken.xyz/"
 languageCode = "en-us"
+themesDir = "themes"
 title = "KORKEN"
 theme = "m10c"
-paginate = 10
+paginate = 7
 googleAnalytics = "UA-145070228-1"
 
 
 [params]
   author = "Erik Blomquist"
-  description = "Hello, I'm Erik Blomquist and this is a blog about my journey through the cloud and automation."
+  description = "Hello, I'm Erik Blomquist and this is a blog about my journey through the cloud."
 
 [[params.social]]
   name = "github"
@@ -22,9 +23,4 @@ googleAnalytics = "UA-145070228-1"
     name = "linkedin"
     url = "https://www.linkedin.com/in/erik-blomquist-0a7261173"
 
-  [params.style]
-  darkestColor = "#d35050"
-  darkColor = "#212121"
-  lightColor = "#f5e3e0"
-  lightestColor = "#f5f5f5"
-  primaryColor = "#fff"
+
