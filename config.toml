@@ -13,9 +13,13 @@ googleAnalytics = "UA-145070228-1"
   name = "github"
   url = "https://github.com/ErikBlomquist"
 
-  [[params.social]]
+[[params.social]]
     name = "twitter"
     url = "https://www.twitter.com/koerk6"
+
+[[params.social]]
+    name = "linkedin"
+    url = "linkedin.com/in/erik-blomquist-0a7261173"
 
   [params.style]
   darkestColor = "#d35050"
