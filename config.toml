@@ -20,7 +20,7 @@ googleAnalytics = "UA-145070228-1"
 
 [[params.social]]
     name = "linkedin"
-    url = "linkedin.com/in/erik-blomquist-0a7261173"
+    url = "https://www.linkedin.com/in/erik-blomquist-0a7261173"
 
   [params.style]
   darkestColor = "#d35050"
