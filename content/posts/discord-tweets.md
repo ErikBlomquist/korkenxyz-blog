@@ -34,45 +34,45 @@ This guide will show you how to create a simple bot that posts tweets to discord
 
 2. Once logged in, click **Get more** in the top right corner.
 
-![ifft-step-1](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-1.png)
+    ![ifft-step-1](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-1.png)
 
 3. Search for twitter in the search field and then click **Services** and then **Twitter**.
 
-![ifft-step-2](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-2.png)
+    ![ifft-step-2](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-2.png)
 
 4. Click **Connect** and then **Authorize app**.
 5. Click on your profile picture in the top left corner and then **Create**.
 
-![ifft-step-3](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-3.png)
+    ![ifft-step-3](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-3.png)
 
 6. Click on the big black and white plus sign between **IF** and **THEN**.
 
-![ifft-step-4](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-4.png)
+    ![ifft-step-4](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-4.png)
 
 
 7. Scroll down/Search and select the **Twitter Icon**.
 
-![ifft-step-5](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-5.png)
+    ![ifft-step-5](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-5.png)
 
 8. Select **New tweet by a specific user** and input the name of the user you want to get notifications from. 
 
-![ifft-step-6](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-6.png)
+    ![ifft-step-6](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-6.png)
 
 9. Click **Create trigger**.
 
-![ifft-step-7](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-7.png)
+    ![ifft-step-7](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-7.png)
 
 10. Click on the big black and white plus sign between **THEN** and **THAT**.
 
-![ifft-step-8](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-8.png)
+    ![ifft-step-8](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-8.png)
 
 11. Search and select **Webhooks** and then click **Connect**.
 
-![ifft-step-9](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-9.png)
+    ![ifft-step-9](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-9.png)
 
 12. Select **Make a web request** as the action.
 
-![ifft-step-10](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-10.png)
+    ![ifft-step-10](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-10.png)
 
 
 13. Paste the webhook you created earlier into the **URL**
@@ -85,7 +85,7 @@ This guide will show you how to create a simple bot that posts tweets to discord
 
 17. Click **Create Action**.
 
-![ifft-step-11](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-11.png)
+    ![ifft-step-11](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/ifft-11.png)
 
 18. Disable **Recieve notifications when this Applets runs** and then click **Finish**.
 19. You're done! You will now be notified on discord when you (or the twitter handle you picked) posts a new tweet.
