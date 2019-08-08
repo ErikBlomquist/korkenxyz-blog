@@ -1,10 +1,17 @@
-## Twitter Notifications on Discord
+---
+title: "How to send twitter notifications to discord using webhooks."
+date: 2019-08-08T21:30:18-08:00
+draft: false
+tags: ["discord", "ifttt", "twitter", "webhook"]
+---
+
+This guide will show you how to create a simple bot that posts tweets to discord as soon as they are posted.
 
 - [Discord](#discord)
 - [IFTTT](#ifttt)
 
 ### Discord
-1. Create a new discord text channel on your server by clicking the plus sign close to your server name. 
+1. We need to start off by creating a new discord text channel on your server by clicking the plus sign close to your server name. 
 
     ![step1](https://raw.githubusercontent.com/ErikBlomquist/korkenxyz-blog/master/content/posts/img/tweet-discord1.jpeg "Create new text channel")
 
