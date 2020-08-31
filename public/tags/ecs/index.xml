@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ecs on KORKEN</title>
+    <link>https://www.korken.xyz/tags/ecs/</link>
+    <description>Recent content in ecs on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Feb 2019 21:30:18 -0800</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/ecs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)</title>
+      <link>https://www.korken.xyz/posts/ecs-ecr/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ecs-ecr/</guid>
+      <description>ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.
+ECS Roles &amp;amp; Policies The first step for us is to create the roles and policies needed for our ECS service.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>terraform on KORKEN</title>
+    <link>https://www.korken.xyz/tags/terraform/</link>
+    <description>Recent content in terraform on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jul 2019 14:49:54 -0800</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup Terraform</title>
+      <link>https://www.korken.xyz/posts/setup-terraform/</link>
+      <pubDate>Mon, 01 Jul 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/setup-terraform/</guid>
+      <description>Setup Terraform  Windows 10 Mac Linux Check Version  Windows 10   Download Terraform from https://www.terraform.io/downloads.html
+  Extract the file you downloaded to c:/terraform
+  Setup path
+3.1 Open up Control Panel -&amp;gt; System and Security -&amp;gt; System -&amp;gt; Advanced system settings -&amp;gt; Environment Variables&amp;hellip;
+3.2 Under System variables, select Path and then click Edit
+3.3 Click New and enter C:\terraform in the new field and then OK to close down your windows.</description>
+    </item>
+    
+    <item>
+      <title>Create a ChatOps Bot for Slack</title>
+      <link>https://www.korken.xyz/posts/create-chatops-bot/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/create-chatops-bot/</guid>
+      <description>Tools/Technologies used  Terraform Slack and Hubot StackStorm Ansible  How to execute Make sure that you have downloaded your private-key-file.pem before starting. Follow instructions below carefully.
+Terraform   Clone Project
+ git clone https://github.com/ErikBlomquist/CIT-481-BOT cd CIT-481-BOT/terraform    Initialize Terraform
+ terraform init    Pass Environment Variables
+ export TF_VAR_aws_access_key=&#39;ACCESS-KEY-GOES-HERE&#39; export TF_VAR_aws_secret_key=&#39;SECRET-KEY-GOES-HERE&#39; export TF_VAR_aws_region=&#39;us-west-2&#39; export TF_VAR_aws_key_pair=&#39;test&#39; export TF_VAR_aws_private_key_pem=&#39;~/ChatOps/test.pem&#39; export TF_VAR_stackstorm_password=&amp;quot;testp&amp;quot;    Terraform Plan &amp;amp; Apply</description>
+    </item>
+    
+    <item>
+      <title>Create your first AWS Lambda function with Terraform</title>
+      <link>https://www.korken.xyz/posts/aws-lambda/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/aws-lambda/</guid>
+      <description>Create your first AWS Lambda function with Terraform This post will go over how to create your first AWS Lambda function which uses the API Gateway to return &amp;ldquo;Hello World!&amp;rdquo;.
+  Start with creating a directory called lambda-test and change to it. You can do that in your cmd with the following:
+ mkdir lambda-test cd lambda-test    Create a new file called main.js and place the following content inside.</description>
+    </item>
+    
+    <item>
+      <title>Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)</title>
+      <link>https://www.korken.xyz/posts/ecs-ecr/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ecs-ecr/</guid>
+      <description>ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.
+ECS Roles &amp;amp; Policies The first step for us is to create the roles and policies needed for our ECS service.</description>
+    </item>
+    
+    <item>
+      <title>How to create a dashboard with metrics using Datadog</title>
+      <link>https://www.korken.xyz/posts/datadog/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/datadog/</guid>
+      <description>The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.
+Install the Datadog Agent We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine.</description>
+    </item>
+    
+    <item>
+      <title>How to SSH into EC2 (Mac &amp; Linux users)</title>
+      <link>https://www.korken.xyz/posts/ssh-ec2/</link>
+      <pubDate>Wed, 06 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ssh-ec2/</guid>
+      <description>Setup and configure AWS Command Line Interface (CLI)   Open your terminal and run &amp;ldquo;pip install awscli&amp;rdquo; and wait for it to install. You should get a message similar to the one below when it is finished.
+ Successfully installed PyYAML-3.13 awscli-1.16.18 botocore-1.12.8 ....    You can verify that aws cli was installed with &amp;ldquo;aws &amp;ndash;version&amp;rdquo;.
+ $ aws --version aws-cli/1.16.10 Python/2.7.10 Darwin/17.7.0 botocore/1.12.0    We need to create the Access key now and we can do that by:</description>
+    </item>
+    
+    <item>
+      <title>Install and Setup Terraform with AWS</title>
+      <link>https://www.korken.xyz/posts/terraform-aws-iam/</link>
+      <pubDate>Tue, 05 Feb 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/terraform-aws-iam/</guid>
+      <description>Table of contents  Install and Setup Terraform with AWS  Download and Install Terraform Link AWS IAM Build a VPC Create subnets Create an Internet Gateway    Install and Setup Terraform with AWS Download and Install Terraform   Download the binary package from: https://www.terraform.io/downloads.html
+  Place unzip the content into a new folder called &amp;ldquo;Terraform&amp;rdquo; under C:\ for example.
+  cd into your new folder and type terraform version and you should get a similar output.</description>
+    </item>
+    
+  </channel>
+</rss>

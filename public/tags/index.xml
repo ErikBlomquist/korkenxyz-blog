@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on KORKEN</title>
+    <link>https://www.korken.xyz/tags/</link>
+    <description>Recent content in Tags on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Aug 2019 16:13:41 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>discord</title>
+      <link>https://www.korken.xyz/tags/discord/</link>
+      <pubDate>Thu, 08 Aug 2019 16:13:41 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/discord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ifttt</title>
+      <link>https://www.korken.xyz/tags/ifttt/</link>
+      <pubDate>Thu, 08 Aug 2019 16:13:41 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/ifttt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>twitter</title>
+      <link>https://www.korken.xyz/tags/twitter/</link>
+      <pubDate>Thu, 08 Aug 2019 16:13:41 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webhooks</title>
+      <link>https://www.korken.xyz/tags/webhooks/</link>
+      <pubDate>Thu, 08 Aug 2019 16:13:41 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/webhooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bot</title>
+      <link>https://www.korken.xyz/tags/bot/</link>
+      <pubDate>Thu, 01 Aug 2019 15:38:40 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://www.korken.xyz/tags/aws/</link>
+      <pubDate>Mon, 01 Jul 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://www.korken.xyz/tags/terraform/</link>
+      <pubDate>Mon, 01 Jul 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BEATS</title>
+      <link>https://www.korken.xyz/tags/beats/</link>
+      <pubDate>Fri, 26 Apr 2019 12:17:21 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/beats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Erik Blomquist</title>
+      <link>https://www.korken.xyz/tags/erik-blomquist/</link>
+      <pubDate>Fri, 26 Apr 2019 12:17:21 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/erik-blomquist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Week 28</title>
+      <link>https://www.korken.xyz/tags/week-28/</link>
+      <pubDate>Fri, 26 Apr 2019 12:17:21 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/week-28/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Week 27</title>
+      <link>https://www.korken.xyz/tags/week-27/</link>
+      <pubDate>Fri, 19 Apr 2019 11:52:38 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/week-27/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Week 26</title>
+      <link>https://www.korken.xyz/tags/week-26/</link>
+      <pubDate>Fri, 12 Apr 2019 18:40:23 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/week-26/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Week 25</title>
+      <link>https://www.korken.xyz/tags/week-25/</link>
+      <pubDate>Fri, 05 Apr 2019 10:11:03 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/week-25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lambda</title>
+      <link>https://www.korken.xyz/tags/lambda/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datadog</title>
+      <link>https://www.korken.xyz/tags/datadog/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/datadog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ecr</title>
+      <link>https://www.korken.xyz/tags/ecr/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/ecr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ecs</title>
+      <link>https://www.korken.xyz/tags/ecs/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/ecs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ec2</title>
+      <link>https://www.korken.xyz/tags/ec2/</link>
+      <pubDate>Wed, 06 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://www.korken.xyz/tags/ssh/</link>
+      <pubDate>Wed, 06 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iam</title>
+      <link>https://www.korken.xyz/tags/iam/</link>
+      <pubDate>Tue, 05 Feb 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/tags/iam/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

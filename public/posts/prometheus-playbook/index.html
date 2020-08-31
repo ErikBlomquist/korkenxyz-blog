@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>How To Install Prometheus with Ansible on Amazon Linux. // KORKEN</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.72.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Erik Blomquist" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://www.korken.xyz/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-145070228-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How To Install Prometheus with Ansible on Amazon Linux."/>
+<meta name="twitter:description" content="Prometheus We have previously downloaded, installed and configured Prometheus manually and it was a little tidious. We are going to create a playbook with Ansible that automates the process for us.
+  Create a new file with the name setup_prometheus.yml and add the following to update the yum repo and to create a prometheus user:
+ --- - hosts: all become: true tasks: - name: Update yum repo yum: name: &#39;*&#39; state: latest - name: Create Prometheus user shell: | useradd --no-create-home --shell /bin/false prometheus mkdir /etc/prometheus mkdir /var/lib/prometheus chown prometheus:prometheus /etc/prometheus chown prometheus:prometheus /var/lib/prometheus    Next step is to download, extract and install prometheus and we can do that like this:"/>
+
+    <meta property="og:title" content="How To Install Prometheus with Ansible on Amazon Linux." />
+<meta property="og:description" content="Prometheus We have previously downloaded, installed and configured Prometheus manually and it was a little tidious. We are going to create a playbook with Ansible that automates the process for us.
+  Create a new file with the name setup_prometheus.yml and add the following to update the yum repo and to create a prometheus user:
+ --- - hosts: all become: true tasks: - name: Update yum repo yum: name: &#39;*&#39; state: latest - name: Create Prometheus user shell: | useradd --no-create-home --shell /bin/false prometheus mkdir /etc/prometheus mkdir /var/lib/prometheus chown prometheus:prometheus /etc/prometheus chown prometheus:prometheus /var/lib/prometheus    Next step is to download, extract and install prometheus and we can do that like this:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.korken.xyz/posts/prometheus-playbook/" />
+<meta property="article:published_time" content="2019-04-12T18:40:23-07:00" />
+<meta property="article:modified_time" content="2019-04-12T18:40:23-07:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.korken.xyz/"><img class="app-header-avatar" src="/avatar.jpg" alt="Erik Blomquist" /></a>
+      <h1>KORKEN</h1>
+      <p>Hello, I&#39;m Erik Blomquist and this is a blog about my journey through the cloud.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ErikBlomquist"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.twitter.com/koerk6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/erik-blomquist-0a7261173"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">How To Install Prometheus with Ansible on Amazon Linux.</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 12, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://www.korken.xyz/tags/beats/">BEATS</a></div></div>
+    </header>
+    <div class="post-content">
+      <h2 id="prometheus">Prometheus</h2>
+<p>We have previously downloaded, installed and configured Prometheus manually and it was a little tidious. We are going to create a playbook with Ansible that automates the process for us.</p>
+<ol>
+<li>
+<p>Create a new file with the name <code>setup_prometheus.yml</code> and add the following to update the yum repo and to create a prometheus user:</p>
+<pre><code> ---
+ - hosts: all
+ become: true
+ tasks:
+     - name: Update yum repo
+         yum:
+         name: '*'
+         state: latest
+
+     - name: Create Prometheus user
+         shell: |
+         useradd --no-create-home --shell /bin/false prometheus
+         mkdir /etc/prometheus
+         mkdir /var/lib/prometheus
+         chown prometheus:prometheus /etc/prometheus
+         chown prometheus:prometheus /var/lib/prometheus
+</code></pre>
+</li>
+<li>
+<p>Next step is to download, extract and install prometheus and we can do that like this:</p>
+<pre><code>     - name: Download file from a file path
+         get_url:
+         url: https://github.com/prometheus/prometheus/releases/download/v2.3.2/prometheus-2.3.2.linux-amd64.tar.gz
+         dest: /home/ec2-user/prometheus-2.3.2.linux-amd64.tar.gz
+
+     - name: Extract tar
+         unarchive:
+         src: /home/ec2-user/prometheus-2.3.2.linux-amd64.tar.gz
+         dest: /home/ec2-user/
+
+     - name: Move Prometheus
+         shell: |
+         mv /home/ec2-user/prometheus-2.3.2.linux-amd64 prometheus-files
+
+     - name: Move files
+         shell: |
+         cp prometheus-files/prometheus /usr/local/bin/
+         cp prometheus-files/promtool /usr/local/bin/
+         cp prometheus-files/promtool /usr/local/bin/
+         chown prometheus:prometheus /usr/local/bin/prometheus
+         chown prometheus:prometheus /usr/local/bin/promtool
+         cp -r prometheus-files/consoles /etc/prometheus
+         cp -r prometheus-files/console_libraries /etc/prometheus
+         chown -R prometheus:prometheus /etc/prometheus/consoles
+         chown -R prometheus:prometheus /etc/prometheus/console_libraries
+</code></pre>
+</li>
+<li>
+<p>We are going to move the configuration file for Prometheus that we are going to create later.</p>
+<pre><code>     - name: Move Prometheus.yml
+         shell: |
+         mv /home/ec2-user/prometheus.yml /etc/prometheus/prometheus.yml
+</code></pre>
+</li>
+<li>
+<p>We now need to change ownerships of the Prometheus files and also setup Prometheus as a service. The second part reloads and starts prometheus.</p>
+<pre><code>     - name: Change ownership and Setup Service File
+         shell: |
+         chown prometheus:prometheus /etc/prometheus/prometheus.yml
+         cp /home/ec2-user/prometheus.service /etc/systemd/system/prometheus.service
+
+     - name: Reload Prometheuse to register changes
+         shell: |
+         systemctl daemon-reload
+         systemctl start prometheus
+         systemctl status prometheus
+</code></pre>
+</li>
+<li>
+<p>Create a new file called <code>prometheus.yml</code> inside your projects folder and add the following:</p>
+<pre><code> global:
+ scrape_interval: 10s
+    
+ scrape_configs:
+ - job_name: 'prometheus'
+     scrape_interval: 5s
+     static_configs:
+     - targets: ['localhost:9090']
+</code></pre>
+</li>
+<li>
+<p>Good job! You should now be able to run your playbook and then visit http://localhost:9090 once your prometheus server is up and running.</p>
+<pre><code> ansible-playbook setup_prometheus.yml</code></pre>
+</li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

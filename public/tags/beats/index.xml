@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BEATS on KORKEN</title>
+    <link>https://www.korken.xyz/tags/beats/</link>
+    <description>Recent content in BEATS on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Apr 2019 12:17:21 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/beats/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create Infrastructure for StackStorm</title>
+      <link>https://www.korken.xyz/posts/terraform-infrastructure-chatops/</link>
+      <pubDate>Fri, 26 Apr 2019 12:17:21 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/terraform-infrastructure-chatops/</guid>
+      <description>We are going to create an infrastructure with Terraform that automatically installs StackStorm onto our instance.
+ Variables  AWS StackStorm   Main  Provider AMI Security Groups EC2 Instance   Execute  Variables AWS   Create a new file to store our variables called variables.tf and open it with your favorite text editor.
+  We need to add variables for our AWS keys and we can do so with the following:</description>
+    </item>
+    
+    <item>
+      <title>How To Create A Customized AMI with Packer</title>
+      <link>https://www.korken.xyz/posts/create-ami-with-packer/</link>
+      <pubDate>Fri, 19 Apr 2019 11:52:38 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/create-ami-with-packer/</guid>
+      <description>Download Packer Template Validate and Build  Download Packer Packer is a lightweight tool that is used to create pre-configured operating systems also called images (AMIs). You can download packer using the link or alternative methods below.
+https://www.packer.io/downloads.html
+Alternative methods
+ OSX: brew install packer Windows: choco install packer  Template Packer uses templates in the format of JSON in order to configure and create images.
+ variables are necessary so that we can pass our AWS credentials for authentication.</description>
+    </item>
+    
+    <item>
+      <title>How To Install Prometheus with Ansible on Amazon Linux.</title>
+      <link>https://www.korken.xyz/posts/prometheus-playbook/</link>
+      <pubDate>Fri, 12 Apr 2019 18:40:23 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/prometheus-playbook/</guid>
+      <description>Prometheus We have previously downloaded, installed and configured Prometheus manually and it was a little tidious. We are going to create a playbook with Ansible that automates the process for us.
+  Create a new file with the name setup_prometheus.yml and add the following to update the yum repo and to create a prometheus user:
+ --- - hosts: all become: true tasks: - name: Update yum repo yum: name: &#39;*&#39; state: latest - name: Create Prometheus user shell: | useradd --no-create-home --shell /bin/false prometheus mkdir /etc/prometheus mkdir /var/lib/prometheus chown prometheus:prometheus /etc/prometheus chown prometheus:prometheus /var/lib/prometheus    Next step is to download, extract and install prometheus and we can do that like this:</description>
+    </item>
+    
+    <item>
+      <title>How To Run Ansible Playbooks Remotely</title>
+      <link>https://www.korken.xyz/posts/ansible-remotely/</link>
+      <pubDate>Fri, 05 Apr 2019 10:11:03 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ansible-remotely/</guid>
+      <description>Ansible is a great automation platform that allows you to control and configure multiple instances from your local machine without having to login to them.
+ Pre-req Install Ansible Hosts file Test Playbook  Pre-req I have one Amazon Linux instance running that I will make changes to. You&amp;rsquo;ll need the following:
+ Public IP to your instance PEM key  Install Ansible Make sure that your running instance have Ansible installed already or run the following:</description>
+    </item>
+    
+  </channel>
+</rss>

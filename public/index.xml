@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KORKEN</title>
+    <link>https://www.korken.xyz/</link>
+    <description>Recent content on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Aug 2019 16:13:41 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to send twitter notifications to discord using webhooks.</title>
+      <link>https://www.korken.xyz/posts/discord-tweets/</link>
+      <pubDate>Thu, 08 Aug 2019 16:13:41 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/discord-tweets/</guid>
+      <description>This guide will show you how to create a simple bot that posts tweets to discord as soon as they are posted.
+ Discord IFTTT  Discord   We need to start off by creating a new discord text channel on your server by clicking the plus sign close to your server name.
+  Make sure text channel is selected and give it a name and then click Create channel.</description>
+    </item>
+    
+    <item>
+      <title>Create A Simple Discord Bot</title>
+      <link>https://www.korken.xyz/posts/create-a-simple-discord-bot/</link>
+      <pubDate>Thu, 01 Aug 2019 15:38:40 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/create-a-simple-discord-bot/</guid>
+      <description>This guide will show you how to create a simple bot for discord on a ubuntu 16 server. Our bot will be very basic and will reply with a message saying pong when we a user types ping.
+ Install nodejs and npm Create the bot Generate token Invite the bot  Install node.js and npm We need to install node.js and npm and we can do so by typing the following commands in your command line.</description>
+    </item>
+    
+    <item>
+      <title>Setup Terraform</title>
+      <link>https://www.korken.xyz/posts/setup-terraform/</link>
+      <pubDate>Mon, 01 Jul 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/setup-terraform/</guid>
+      <description>Setup Terraform  Windows 10 Mac Linux Check Version  Windows 10   Download Terraform from https://www.terraform.io/downloads.html
+  Extract the file you downloaded to c:/terraform
+  Setup path
+3.1 Open up Control Panel -&amp;gt; System and Security -&amp;gt; System -&amp;gt; Advanced system settings -&amp;gt; Environment Variables&amp;hellip;
+3.2 Under System variables, select Path and then click Edit
+3.3 Click New and enter C:\terraform in the new field and then OK to close down your windows.</description>
+    </item>
+    
+    <item>
+      <title>Create Infrastructure for StackStorm</title>
+      <link>https://www.korken.xyz/posts/terraform-infrastructure-chatops/</link>
+      <pubDate>Fri, 26 Apr 2019 12:17:21 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/terraform-infrastructure-chatops/</guid>
+      <description>We are going to create an infrastructure with Terraform that automatically installs StackStorm onto our instance.
+ Variables  AWS StackStorm   Main  Provider AMI Security Groups EC2 Instance   Execute  Variables AWS   Create a new file to store our variables called variables.tf and open it with your favorite text editor.
+  We need to add variables for our AWS keys and we can do so with the following:</description>
+    </item>
+    
+    <item>
+      <title>How To Create A Customized AMI with Packer</title>
+      <link>https://www.korken.xyz/posts/create-ami-with-packer/</link>
+      <pubDate>Fri, 19 Apr 2019 11:52:38 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/create-ami-with-packer/</guid>
+      <description>Download Packer Template Validate and Build  Download Packer Packer is a lightweight tool that is used to create pre-configured operating systems also called images (AMIs). You can download packer using the link or alternative methods below.
+https://www.packer.io/downloads.html
+Alternative methods
+ OSX: brew install packer Windows: choco install packer  Template Packer uses templates in the format of JSON in order to configure and create images.
+ variables are necessary so that we can pass our AWS credentials for authentication.</description>
+    </item>
+    
+    <item>
+      <title>How To Install Prometheus with Ansible on Amazon Linux.</title>
+      <link>https://www.korken.xyz/posts/prometheus-playbook/</link>
+      <pubDate>Fri, 12 Apr 2019 18:40:23 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/prometheus-playbook/</guid>
+      <description>Prometheus We have previously downloaded, installed and configured Prometheus manually and it was a little tidious. We are going to create a playbook with Ansible that automates the process for us.
+  Create a new file with the name setup_prometheus.yml and add the following to update the yum repo and to create a prometheus user:
+ --- - hosts: all become: true tasks: - name: Update yum repo yum: name: &#39;*&#39; state: latest - name: Create Prometheus user shell: | useradd --no-create-home --shell /bin/false prometheus mkdir /etc/prometheus mkdir /var/lib/prometheus chown prometheus:prometheus /etc/prometheus chown prometheus:prometheus /var/lib/prometheus    Next step is to download, extract and install prometheus and we can do that like this:</description>
+    </item>
+    
+    <item>
+      <title>How To Run Ansible Playbooks Remotely</title>
+      <link>https://www.korken.xyz/posts/ansible-remotely/</link>
+      <pubDate>Fri, 05 Apr 2019 10:11:03 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ansible-remotely/</guid>
+      <description>Ansible is a great automation platform that allows you to control and configure multiple instances from your local machine without having to login to them.
+ Pre-req Install Ansible Hosts file Test Playbook  Pre-req I have one Amazon Linux instance running that I will make changes to. You&amp;rsquo;ll need the following:
+ Public IP to your instance PEM key  Install Ansible Make sure that your running instance have Ansible installed already or run the following:</description>
+    </item>
+    
+    <item>
+      <title>How to Install a LAMP stack with Ansible and Docker</title>
+      <link>https://www.korken.xyz/posts/lamp_with_ansible_and_docker/</link>
+      <pubDate>Fri, 08 Mar 2019 10:19:16 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/lamp_with_ansible_and_docker/</guid>
+      <description>We are going to create a simple Ansible script that install a LAMP stack + Composer. LAMP stands for:
+ Linux Apache MySQL PHP  Create and Login to Docker Container The LAMP stack will be installed inside a Docker container that runs on Ubuntu so we first need to create that container.
+  Start Docker
+  To create a new Docker container named lamp. Open your terminal and run:</description>
+    </item>
+    
+    <item>
+      <title>Create a ChatOps Bot for Slack</title>
+      <link>https://www.korken.xyz/posts/create-chatops-bot/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/create-chatops-bot/</guid>
+      <description>Tools/Technologies used  Terraform Slack and Hubot StackStorm Ansible  How to execute Make sure that you have downloaded your private-key-file.pem before starting. Follow instructions below carefully.
+Terraform   Clone Project
+ git clone https://github.com/ErikBlomquist/CIT-481-BOT cd CIT-481-BOT/terraform    Initialize Terraform
+ terraform init    Pass Environment Variables
+ export TF_VAR_aws_access_key=&#39;ACCESS-KEY-GOES-HERE&#39; export TF_VAR_aws_secret_key=&#39;SECRET-KEY-GOES-HERE&#39; export TF_VAR_aws_region=&#39;us-west-2&#39; export TF_VAR_aws_key_pair=&#39;test&#39; export TF_VAR_aws_private_key_pem=&#39;~/ChatOps/test.pem&#39; export TF_VAR_stackstorm_password=&amp;quot;testp&amp;quot;    Terraform Plan &amp;amp; Apply</description>
+    </item>
+    
+    <item>
+      <title>Create your first AWS Lambda function with Terraform</title>
+      <link>https://www.korken.xyz/posts/aws-lambda/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/aws-lambda/</guid>
+      <description>Create your first AWS Lambda function with Terraform This post will go over how to create your first AWS Lambda function which uses the API Gateway to return &amp;ldquo;Hello World!&amp;rdquo;.
+  Start with creating a directory called lambda-test and change to it. You can do that in your cmd with the following:
+ mkdir lambda-test cd lambda-test    Create a new file called main.js and place the following content inside.</description>
+    </item>
+    
+    <item>
+      <title>Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)</title>
+      <link>https://www.korken.xyz/posts/ecs-ecr/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ecs-ecr/</guid>
+      <description>ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.
+ECS Roles &amp;amp; Policies The first step for us is to create the roles and policies needed for our ECS service.</description>
+    </item>
+    
+    <item>
+      <title>How to create a dashboard with metrics using Datadog</title>
+      <link>https://www.korken.xyz/posts/datadog/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/datadog/</guid>
+      <description>The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.
+Install the Datadog Agent We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine.</description>
+    </item>
+    
+    <item>
+      <title>How to SSH into EC2 (Mac &amp; Linux users)</title>
+      <link>https://www.korken.xyz/posts/ssh-ec2/</link>
+      <pubDate>Wed, 06 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ssh-ec2/</guid>
+      <description>Setup and configure AWS Command Line Interface (CLI)   Open your terminal and run &amp;ldquo;pip install awscli&amp;rdquo; and wait for it to install. You should get a message similar to the one below when it is finished.
+ Successfully installed PyYAML-3.13 awscli-1.16.18 botocore-1.12.8 ....    You can verify that aws cli was installed with &amp;ldquo;aws &amp;ndash;version&amp;rdquo;.
+ $ aws --version aws-cli/1.16.10 Python/2.7.10 Darwin/17.7.0 botocore/1.12.0    We need to create the Access key now and we can do that by:</description>
+    </item>
+    
+    <item>
+      <title>Install and Setup Terraform with AWS</title>
+      <link>https://www.korken.xyz/posts/terraform-aws-iam/</link>
+      <pubDate>Tue, 05 Feb 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/terraform-aws-iam/</guid>
+      <description>Table of contents  Install and Setup Terraform with AWS  Download and Install Terraform Link AWS IAM Build a VPC Create subnets Create an Internet Gateway    Install and Setup Terraform with AWS Download and Install Terraform   Download the binary package from: https://www.terraform.io/downloads.html
+  Place unzip the content into a new folder called &amp;ldquo;Terraform&amp;rdquo; under C:\ for example.
+  cd into your new folder and type terraform version and you should get a similar output.</description>
+    </item>
+    
+  </channel>
+</rss>

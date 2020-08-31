@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ifttt on KORKEN</title>
+    <link>https://www.korken.xyz/tags/ifttt/</link>
+    <description>Recent content in ifttt on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Aug 2019 16:13:41 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/ifttt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to send twitter notifications to discord using webhooks.</title>
+      <link>https://www.korken.xyz/posts/discord-tweets/</link>
+      <pubDate>Thu, 08 Aug 2019 16:13:41 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/discord-tweets/</guid>
+      <description>This guide will show you how to create a simple bot that posts tweets to discord as soon as they are posted.
+ Discord IFTTT  Discord   We need to start off by creating a new discord text channel on your server by clicking the plus sign close to your server name.
+  Make sure text channel is selected and give it a name and then click Create channel.</description>
+    </item>
+    
+  </channel>
+</rss>

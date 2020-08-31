@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lambda on KORKEN</title>
+    <link>https://www.korken.xyz/tags/lambda/</link>
+    <description>Recent content in lambda on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Feb 2019 12:22:30 -0800</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a ChatOps Bot for Slack</title>
+      <link>https://www.korken.xyz/posts/create-chatops-bot/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/create-chatops-bot/</guid>
+      <description>Tools/Technologies used  Terraform Slack and Hubot StackStorm Ansible  How to execute Make sure that you have downloaded your private-key-file.pem before starting. Follow instructions below carefully.
+Terraform   Clone Project
+ git clone https://github.com/ErikBlomquist/CIT-481-BOT cd CIT-481-BOT/terraform    Initialize Terraform
+ terraform init    Pass Environment Variables
+ export TF_VAR_aws_access_key=&#39;ACCESS-KEY-GOES-HERE&#39; export TF_VAR_aws_secret_key=&#39;SECRET-KEY-GOES-HERE&#39; export TF_VAR_aws_region=&#39;us-west-2&#39; export TF_VAR_aws_key_pair=&#39;test&#39; export TF_VAR_aws_private_key_pem=&#39;~/ChatOps/test.pem&#39; export TF_VAR_stackstorm_password=&amp;quot;testp&amp;quot;    Terraform Plan &amp;amp; Apply</description>
+    </item>
+    
+    <item>
+      <title>Create your first AWS Lambda function with Terraform</title>
+      <link>https://www.korken.xyz/posts/aws-lambda/</link>
+      <pubDate>Fri, 08 Feb 2019 12:22:30 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/aws-lambda/</guid>
+      <description>Create your first AWS Lambda function with Terraform This post will go over how to create your first AWS Lambda function which uses the API Gateway to return &amp;ldquo;Hello World!&amp;rdquo;.
+  Start with creating a directory called lambda-test and change to it. You can do that in your cmd with the following:
+ mkdir lambda-test cd lambda-test    Create a new file called main.js and place the following content inside.</description>
+    </item>
+    
+  </channel>
+</rss>

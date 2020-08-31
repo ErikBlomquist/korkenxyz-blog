@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Week 25 on KORKEN</title>
+    <link>https://www.korken.xyz/tags/week-25/</link>
+    <description>Recent content in Week 25 on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Apr 2019 10:11:03 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/week-25/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Run Ansible Playbooks Remotely</title>
+      <link>https://www.korken.xyz/posts/ansible-remotely/</link>
+      <pubDate>Fri, 05 Apr 2019 10:11:03 -0700</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/ansible-remotely/</guid>
+      <description>Ansible is a great automation platform that allows you to control and configure multiple instances from your local machine without having to login to them.
+ Pre-req Install Ansible Hosts file Test Playbook  Pre-req I have one Amazon Linux instance running that I will make changes to. You&amp;rsquo;ll need the following:
+ Public IP to your instance PEM key  Install Ansible Make sure that your running instance have Ansible installed already or run the following:</description>
+    </item>
+    
+  </channel>
+</rss>

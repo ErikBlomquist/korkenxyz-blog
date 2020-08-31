@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Create your first AWS Lambda function with Terraform // KORKEN</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.72.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Erik Blomquist" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://www.korken.xyz/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-145070228-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Create your first AWS Lambda function with Terraform"/>
+<meta name="twitter:description" content="Create your first AWS Lambda function with Terraform This post will go over how to create your first AWS Lambda function which uses the API Gateway to return &ldquo;Hello World!&rdquo;.
+  Start with creating a directory called lambda-test and change to it. You can do that in your cmd with the following:
+ mkdir lambda-test cd lambda-test    Create a new file called main.js and place the following content inside."/>
+
+    <meta property="og:title" content="Create your first AWS Lambda function with Terraform" />
+<meta property="og:description" content="Create your first AWS Lambda function with Terraform This post will go over how to create your first AWS Lambda function which uses the API Gateway to return &ldquo;Hello World!&rdquo;.
+  Start with creating a directory called lambda-test and change to it. You can do that in your cmd with the following:
+ mkdir lambda-test cd lambda-test    Create a new file called main.js and place the following content inside." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.korken.xyz/posts/aws-lambda/" />
+<meta property="article:published_time" content="2019-02-08T12:22:30-08:00" />
+<meta property="article:modified_time" content="2019-02-08T12:22:30-08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.korken.xyz/"><img class="app-header-avatar" src="/avatar.jpg" alt="Erik Blomquist" /></a>
+      <h1>KORKEN</h1>
+      <p>Hello, I&#39;m Erik Blomquist and this is a blog about my journey through the cloud.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ErikBlomquist"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.twitter.com/koerk6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/erik-blomquist-0a7261173"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Create your first AWS Lambda function with Terraform</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 8, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://www.korken.xyz/tags/terraform/">terraform</a><a class="tag" href="https://www.korken.xyz/tags/aws/">aws</a><a class="tag" href="https://www.korken.xyz/tags/lambda/">lambda</a></div></div>
+    </header>
+    <div class="post-content">
+      <h2 id="create-your-first-aws-lambda-function-with-terraform">Create your first AWS Lambda function with Terraform</h2>
+<p><img src="http://www.digiclarity.com/images/technology/templates/lambda.jpg" alt="aws-lambda"></p>
+<p>This post will go over how to create your first AWS Lambda function which uses the API Gateway to return &ldquo;Hello World!&rdquo;.</p>
+<ol>
+<li>
+<p>Start with creating a directory called <code>lambda-test</code> and change to it. You can do that in your cmd with the following:</p>
+<pre><code> mkdir lambda-test
+ cd lambda-test
+</code></pre>
+</li>
+<li>
+<p>Create a new file called <code>main.js</code> and place the following content inside.</p>
+<pre><code>'use strict'
+
+exports.handler = function(event, context, callback) {
+var response = {
+    statusCode: 200,
+    headers: {
+    'Content-Type': 'text/html; charset=utf-8'
+    },
+    body: '&lt;p&gt;Hello world!&lt;/p&gt;'
+}
+callback(null, response)
+}
+</code></pre></li>
+<li>
+<p>We need to create a .zip file from the source code. While inside the <code>lambda-test</code> folder. Do the following:</p>
+<pre><code> $ zip /lambda-test.zip main.js
+</code></pre>
+</li>
+<li>
+<p>It&rsquo;s now time to create a test bucket.</p>
+<pre><code> $ aws s3api create-bucket --bucket=terraform-serverless-lambda-test --region=us-east-1
+</code></pre>
+</li>
+<li>
+<p>Once the bucket has been created, it&rsquo;s time for us to upload our zip file to that bucket.</p>
+<pre><code> $ aws s3 cp lambda-test.zip s3://terraform-serverless-lambda-test/v1.0.0/lambda-test.zip
+</code></pre>
+</li>
+</ol>
+<h2 id="create-lambda-function">Create Lambda function</h2>
+<ol start="6">
+<li>
+<p>It&rsquo;s time for Terraform! Create a new file called <code>lambda.tf</code> and place the following inside:</p>
+<pre><code> provider &quot;aws&quot; {
+  region = &quot;us-east-1&quot;
+ }
+
+ resource &quot;aws_lambda_function&quot; &quot;example&quot; {
+ function_name = &quot;ServerlessExample&quot;
+
+ s3_bucket = &quot;terraform-serverless-lambda-test&quot;
+ s3_key    = &quot;v1.0.0/lambda-test.zip&quot;
+
+ # &quot;main&quot; is the filename within the zip file (main.js) and &quot;handler&quot;
+ # is the name of the property under which the handler function was
+ # exported in that file.
+ handler = &quot;main.handler&quot;
+ runtime = &quot;nodejs6.10&quot;
+
+ role = &quot;${aws_iam_role.lambda_exec.arn}&quot;
+ }
+
+ # IAM role which dictates what other AWS services the Lambda function
+ # may access.
+ resource &quot;aws_iam_role&quot; &quot;lambda_exec&quot; {
+ name = &quot;serverless_example_lambda&quot;
+
+ assume_role_policy = &lt;&lt;EOF
+ {
+ &quot;Version&quot;: &quot;2012-10-17&quot;,
+ &quot;Statement&quot;: [
+     {
+     &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+     &quot;Principal&quot;: {
+         &quot;Service&quot;: &quot;lambda.amazonaws.com&quot;
+     },
+     &quot;Effect&quot;: &quot;Allow&quot;,
+     &quot;Sid&quot;: &quot;&quot;
+     }
+ ]
+ }
+ EOF
+ }
+
+ resource &quot;aws_lambda_permission&quot; &quot;apigw&quot; {
+     statement_id  = &quot;AllowAPIGatewayInvoke&quot;
+     action        = &quot;lambda:InvokeFunction&quot;
+     function_name = &quot;${aws_lambda_function.example.arn}&quot;
+     principal     = &quot;apigateway.amazonaws.com&quot;
+
+     # The /*/* portion grants access from any method on any resource
+     # within the API Gateway &quot;REST API&quot;.
+     source_arn = &quot;${aws_api_gateway_deployment.example.execution_arn}/*/*&quot;
+     }
+</code></pre>
+</li>
+<li>
+<p>We can run the the following invoke command to see if our function is working.</p>
+<pre><code> $ aws lambda invoke --region=us-east-1 --function-name=ServerlessExample output.txt
+</code></pre>
+</li>
+</ol>
+<h2 id="api-gateway">API Gateway</h2>
+<ol start="8">
+<li>
+<p>Create a new file called <code>api_gateway.tf</code> next to our lambda.tf file.</p>
+<pre><code> resource &quot;aws_api_gateway_rest_api&quot; &quot;example&quot; {
+     name        = &quot;ServerlessExample&quot;
+     description = &quot;Terraform Serverless Application Example&quot;
+ }
+</code></pre>
+</li>
+<li>
+<p>Define proxy resource:</p>
+<pre><code> resource &quot;aws_api_gateway_resource&quot; &quot;proxy&quot; {
+     rest_api_id = &quot;${aws_api_gateway_rest_api.example.id}&quot;
+     parent_id   = &quot;${aws_api_gateway_rest_api.example.root_resource_id}&quot;
+     path_part   = &quot;{proxy+}&quot;
+ }
+
+ resource &quot;aws_api_gateway_method&quot; &quot;proxy&quot; {
+     rest_api_id   = &quot;${aws_api_gateway_rest_api.example.id}&quot;
+     resource_id   = &quot;${aws_api_gateway_resource.proxy.id}&quot;
+     http_method   = &quot;ANY&quot;
+     authorization = &quot;NONE&quot;
+ }
+
+ resource &quot;aws_api_gateway_integration&quot; &quot;lambda&quot; {
+     rest_api_id = &quot;${aws_api_gateway_rest_api.example.id}&quot;
+     resource_id = &quot;${aws_api_gateway_method.proxy.resource_id}&quot;
+     http_method = &quot;${aws_api_gateway_method.proxy.http_method}&quot;
+
+     integration_http_method = &quot;POST&quot;
+     type                    = &quot;AWS_PROXY&quot;
+     uri                     = &quot;${aws_lambda_function.example.invoke_arn}&quot;
+ }
+
+ resource &quot;aws_api_gateway_method&quot; &quot;proxy_root&quot; {
+     rest_api_id   = &quot;${aws_api_gateway_rest_api.example.id}&quot;
+     resource_id   = &quot;${aws_api_gateway_rest_api.example.root_resource_id}&quot;
+     http_method   = &quot;ANY&quot;
+     authorization = &quot;NONE&quot;
+ }
+
+ resource &quot;aws_api_gateway_integration&quot; &quot;lambda_root&quot; {
+     rest_api_id = &quot;${aws_api_gateway_rest_api.example.id}&quot;
+     resource_id = &quot;${aws_api_gateway_method.proxy_root.resource_id}&quot;
+     http_method = &quot;${aws_api_gateway_method.proxy_root.http_method}&quot;
+
+     integration_http_method = &quot;POST&quot;
+     type                    = &quot;AWS_PROXY&quot;
+     uri                     = &quot;${aws_lambda_function.example.invoke_arn}&quot;
+     }
+
+ resource &quot;aws_api_gateway_deployment&quot; &quot;example&quot; {
+ depends_on = [
+     &quot;aws_api_gateway_integration.lambda&quot;,
+     &quot;aws_api_gateway_integration.lambda_root&quot;,
+ ]
+
+ rest_api_id = &quot;${aws_api_gateway_rest_api.example.id}&quot;
+ stage_name  = &quot;test&quot;
+ }
+
+ output &quot;base_url&quot; {
+     value = &quot;${aws_api_gateway_deployment.example.invoke_url}&quot;
+     }
+</code></pre>
+</li>
+<li>
+<p>run <code>terraform init</code> and <code>terraform apply</code> and you should get a similar output:</p>
+<pre><code>Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+base_url = https://gjind8zsgc.execute-api.us-east-1.amazonaws.com/test
+</code></pre>
+</li>
+<li>
+<p>Click on the base_url to see your Hello World application =)</p>
+</li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

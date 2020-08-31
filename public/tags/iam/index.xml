@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iam on KORKEN</title>
+    <link>https://www.korken.xyz/tags/iam/</link>
+    <description>Recent content in iam on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Feb 2019 14:49:54 -0800</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/iam/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install and Setup Terraform with AWS</title>
+      <link>https://www.korken.xyz/posts/terraform-aws-iam/</link>
+      <pubDate>Tue, 05 Feb 2019 14:49:54 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/terraform-aws-iam/</guid>
+      <description>Table of contents  Install and Setup Terraform with AWS  Download and Install Terraform Link AWS IAM Build a VPC Create subnets Create an Internet Gateway    Install and Setup Terraform with AWS Download and Install Terraform   Download the binary package from: https://www.terraform.io/downloads.html
+  Place unzip the content into a new folder called &amp;ldquo;Terraform&amp;rdquo; under C:\ for example.
+  cd into your new folder and type terraform version and you should get a similar output.</description>
+    </item>
+    
+  </channel>
+</rss>

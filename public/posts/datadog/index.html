@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>How to create a dashboard with metrics using Datadog // KORKEN</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.72.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Erik Blomquist" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://www.korken.xyz/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-145070228-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to create a dashboard with metrics using Datadog"/>
+<meta name="twitter:description" content="The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.
+Install the Datadog Agent We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine."/>
+
+    <meta property="og:title" content="How to create a dashboard with metrics using Datadog" />
+<meta property="og:description" content="The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.
+Install the Datadog Agent We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.korken.xyz/posts/datadog/" />
+<meta property="article:published_time" content="2019-02-07T21:30:18-08:00" />
+<meta property="article:modified_time" content="2019-02-07T21:30:18-08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.korken.xyz/"><img class="app-header-avatar" src="/avatar.jpg" alt="Erik Blomquist" /></a>
+      <h1>KORKEN</h1>
+      <p>Hello, I&#39;m Erik Blomquist and this is a blog about my journey through the cloud.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ErikBlomquist"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.twitter.com/koerk6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/erik-blomquist-0a7261173"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">How to create a dashboard with metrics using Datadog</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 7, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://www.korken.xyz/tags/terraform/">terraform</a><a class="tag" href="https://www.korken.xyz/tags/aws/">aws</a><a class="tag" href="https://www.korken.xyz/tags/datadog/">datadog</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.</p>
+<h3 id="install-the-datadog-agent">Install the Datadog Agent</h3>
+<p>We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine.</p>
+<ol>
+<li>Login to your Datadog account (<a href="https://www.datadoghq.com/">https://www.datadoghq.com/</a>) and select <code>Integrations</code> at the top of the page and then click <code>Agent</code></li>
+<li>Select which OS you want to install the Agent on, copy the one-step installation code from Step 1 (Should look similar to the code below) and SSH into your host and paste the code.
+<code>DD_API_KEY=9289c8******** bash -c &quot;$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)&quot;</code></li>
+<li>You should now be able to click on <code>Infrastructure</code> and then <code>Infrastructure List</code> to see a list of hosts where you have installed the agent on.</li>
+</ol>
+<h3 id="aws-integration">AWS Integration</h3>
+<p>Next step is to sync our AWS account to Datadog so what we can get an overlook of our full infrastructure.</p>
+<ol>
+<li>Click on <code>Integrations</code> from the menu on the top and select <code>Integrations</code>.</li>
+<li>Search for AWS in the search field and select it.</li>
+<li>You&rsquo;ll be taken to a page that asks for your AWS account ID and AWS Role name.
+Enter the AWS ID of your organization (if you are in one, 507963158957 in our case).
+Enter <code>DatadogAWSIntegrationRole</code> for the AWS Role name.</li>
+<li>Click on <code>Install/Update configuration</code> in the left corner.</li>
+<li>DONE! Click on <code>Infrastructure</code> and then <code>Infrastructure List</code> again and you should now be able to see your full infrastructure.</li>
+</ol>
+<h3 id="screenboard-vs-timeboard">Screenboard vs Timeboard</h3>
+<ul>
+<li><strong>Screenboards</strong> are used for status boards and sharing data. All graphs in a screenboard can have individual time scopes and they are used to monitor the overall health over your infrastructure.</li>
+<li><strong>Timeboards</strong> are used for troubleshooting and correlation. The graphs used share the same time scopes. Once you have identified something of a concern on a screenboard you use the timeboard to troubleshoot that particular concern.</li>
+</ul>
+<ol>
+<li>I am using a Timeboard for this example and you can create one by clicking <code>Dashboards</code> select <code>New Dashboard</code> and then <code>New Timeboard</code>.</li>
+<li>I will go over how to create a graph for CPU usage. Drag and Drop the <code>Timeseries</code> onto your dashboard and a new window will popup.</li>
+<li>Click on <code>system.load.1</code> and type <code>system.cpu.idle</code></li>
+<li>Click <code>Graph Metric</code> to add a new field and add <code>system.cpu.system</code>.</li>
+<li>Repeat step 4. for the metrics: <code>system.cpu.iowait</code>,<code>system.cpu.user</code>,<code>system.cpu.stolen</code> and <code>system.cpu.guest</code>.</li>
+<li>Give your graph a suitable title and then press <code>Save</code> and you are done.</li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

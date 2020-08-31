@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datadog on KORKEN</title>
+    <link>https://www.korken.xyz/tags/datadog/</link>
+    <description>Recent content in datadog on KORKEN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Feb 2019 21:30:18 -0800</lastBuildDate>
+    
+	<atom:link href="https://www.korken.xyz/tags/datadog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to create a dashboard with metrics using Datadog</title>
+      <link>https://www.korken.xyz/posts/datadog/</link>
+      <pubDate>Thu, 07 Feb 2019 21:30:18 -0800</pubDate>
+      
+      <guid>https://www.korken.xyz/posts/datadog/</guid>
+      <description>The Datadog Agent allows you to collect metrics from your instances and a dashboards can be a very useful tool to monitoring those metrics from your instances.
+Install the Datadog Agent We need to install the Datadog Agent on our target hosts so that we can collect the metrics from our hosts. The ideal solution is to do this with Ansible but I will demonstrate how to install it on an Ubuntu machine.</description>
+    </item>
+    
+  </channel>
+</rss>

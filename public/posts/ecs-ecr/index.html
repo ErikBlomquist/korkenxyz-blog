@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR) // KORKEN</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.72.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Erik Blomquist" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://www.korken.xyz/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-145070228-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)"/>
+<meta name="twitter:description" content="ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.
+ECS Roles &amp; Policies The first step for us is to create the roles and policies needed for our ECS service."/>
+
+    <meta property="og:title" content="Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)" />
+<meta property="og:description" content="ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.
+ECS Roles &amp; Policies The first step for us is to create the roles and policies needed for our ECS service." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.korken.xyz/posts/ecs-ecr/" />
+<meta property="article:published_time" content="2019-02-07T21:30:18-08:00" />
+<meta property="article:modified_time" content="2019-02-07T21:30:18-08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.korken.xyz/"><img class="app-header-avatar" src="/avatar.jpg" alt="Erik Blomquist" /></a>
+      <h1>KORKEN</h1>
+      <p>Hello, I&#39;m Erik Blomquist and this is a blog about my journey through the cloud.</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ErikBlomquist"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.twitter.com/koerk6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.linkedin.com/in/erik-blomquist-0a7261173"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Get Started with Amazon Elastic Container Services (ECS) and Elastic Container Registry (ECR)</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 7, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://www.korken.xyz/tags/terraform/">terraform</a><a class="tag" href="https://www.korken.xyz/tags/ecs/">ecs</a><a class="tag" href="https://www.korken.xyz/tags/ecr/">ecr</a></div></div>
+    </header>
+    <div class="post-content">
+      <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDmRW5CPrryBo5tXGKkph0g51bFkO4qsmDYaXFDQmMEeLWvkVsA" alt="Image of ECS"></p>
+<p>ECS allows you run and scale containerized applications on AWS such as Docker. We are basically going to create a cluster where we create an EC2 instance that can run our containers with the help of tasks that allows us to define our docker image and what resources it needs. We are also going to use services to tell ECS which cluster to run our applications on.</p>
+<h3 id="ecs-roles--policies">ECS Roles &amp; Policies</h3>
+<p>The first step for us is to create the roles and policies needed for our ECS service.</p>
+<ol>
+<li>Create a new file called <code>ecs-roles.tf</code> and put the following inside:</li>
+</ol>
+<pre><code>resource &quot;aws_iam_role&quot; &quot;ecs-instance-role&quot; {
+  name = &quot;ecs-instance-role&quot;
+  path = &quot;/&quot;
+  assume_role_policy = &quot;${data.aws_iam_policy_document.ecs-instance-policy.json}&quot;
+}
+
+data &quot;aws_iam_policy_document&quot; &quot;ecs-instance-policy&quot; {
+  statement {
+  actions = [&quot;sts:AssumeRole&quot;]
+principals {
+  type = &quot;Service&quot;
+  identifiers = [&quot;ec2.amazonaws.com&quot;]
+}
+}
+}
+
+resource &quot;aws_iam_role_policy_attachment&quot; &quot;ecs-instance-role-attachment&quot; {
+  role = &quot;${aws_iam_role.ecs-instance-role.name}&quot;
+  policy_arn = &quot;arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role&quot;
+}
+
+resource &quot;aws_iam_instance_profile&quot; &quot;ecs-instance-profile&quot; {
+  name = &quot;ecs-instance-profile&quot;
+  path = &quot;/&quot;
+  role = &quot;${aws_iam_role.ecs-instance-role.id}&quot;
+  provisioner &quot;local-exec&quot; {
+  command = &quot;sleep 60&quot;
+}
+}
+
+resource &quot;aws_iam_role&quot; &quot;ecs-service-role&quot; {
+  name = &quot;ecs-service-role&quot;
+  path = &quot;/&quot;
+  assume_role_policy = &quot;${data.aws_iam_policy_document.ecs-service-policy.json}&quot;
+}
+
+resource &quot;aws_iam_role_policy_attachment&quot; &quot;ecs-service-role-attachment&quot; {
+  role = &quot;${aws_iam_role.ecs-service-role.name}&quot;
+  policy_arn = &quot;arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceRole&quot;
+}
+
+data &quot;aws_iam_policy_document&quot; &quot;ecs-service-policy&quot; {
+  statement {
+  actions = [&quot;sts:AssumeRole&quot;]
+principals {
+  type = &quot;Service&quot;
+  identifiers = [&quot;ecs.amazonaws.com&quot;]
+}
+}
+}
+</code></pre><ol start="2">
+<li>Save your file next to your other Terraform files and <code>cd</code> into that directory and run:</li>
+</ol>
+<pre><code>  terraform init
+  terraform plan
+</code></pre><ol start="3">
+<li>If everything looks good, run:</li>
+</ol>
+<pre><code>  terraform apply
+</code></pre><ol start="4">
+<li>The roles and policies are now created!</li>
+</ol>
+<h3 id="elastic-container-services-ecs-cluster-with-terraform">Elastic Container Services (ECS) cluster with Terraform</h3>
+<ol>
+<li>Create a new file called <code>ecs.tf</code> and place it in the same folder as <code>ecs-roles.tf</code>.</li>
+<li>Place the following content inside your newly created file.</li>
+</ol>
+<pre><code># Create Cluster
+resource &quot;aws_ecs_cluster&quot; &quot;beats-cluster&quot; {
+    name = &quot;beats-cluster&quot;
+}
+</code></pre><ol start="3">
+<li>The code above creates a new ECS cluster called <code>beats-cluster</code>. You can now login to your AWS console and click <code>Elastic Container Services</code> to see your new cluster at the bottom.</li>
+</ol>
+<h3 id="elastic-container-registry-ecr-with-terraform">Elastic Container Registry (ECR) with Terraform</h3>
+<p>The ECR is a repository where we can store our images created in Docker. To do so we first need to create our ECR.</p>
+<ol>
+<li>Create a new file in the same folder as before and call it <code>ecr.tf</code>.</li>
+<li>Copy and paste the code below:</li>
+</ol>
+<pre><code>  # Create ECR
+  resource &quot;aws_ecr_repository&quot; &quot;beats_repo&quot; {
+    name = &quot;beats_repo&quot;
+  }
+
+  # Output URL
+  output &quot;beats-repository-URL&quot; {
+    value = &quot;${aws_ecr_repository.beats_repo.repository_url}&quot;
+  }
+</code></pre><ol start="3">
+<li>The first code block creates our ecr reposiotry and calls it <code>beats_repo</code>. The second block is used to output the URL to our repository so we do not have to logon to the AWS console to find it.</li>
+<li>Open your terminal and run terraform again to start your ECR and ECS.</li>
+</ol>
+<pre><code>    terraform plan
+    terraforn apply
+</code></pre><ol start="5">
+<li>If you login to your AWS console and then click on <code>Elastic Container Services</code> and then <code>Clusters</code> you will find your cluster at the bottom of the page. You can click on the title to find more information.</li>
+<li>You can click <code>Repositories</code> on the left side under Amazon ECR to find information about your Container Registry. You should have one repository there already called <code>beats_repo</code>.</li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
